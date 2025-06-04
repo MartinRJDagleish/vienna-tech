@@ -80,3 +80,5 @@
     place(top, dx: 1.8em)[X]
   })
 }
+
+#let outlined = state("outlined", false)

@@ -140,6 +140,11 @@
   }
 
   show outline.entry.where(level:1): set text(font:title-font)
+  show outline: it => {
+    outlined.update(true)
+    it
+    outlined.update(false)
+  }
   
   body
 }
