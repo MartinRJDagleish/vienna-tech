@@ -1,4 +1,4 @@
-#import "@preview/vienna-tech:1.0.0": *
+#import "@local/vienna-tech:1.1.0": *
 
 #show "Typst": fancy-typst
 #show "LaTeX": fancy-latex
@@ -49,3 +49,7 @@ das Inhalts- und das Literaturverzeichnis generiert.
 )
 #include "appendix.typ"
 #bibliography("assets/refs.bib")
+
+#fig-outline()
+
+#tab-outline()
