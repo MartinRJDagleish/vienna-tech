@@ -1,4 +1,4 @@
-#import "@local/vienna-tech:1.1.0": *
+#import "@preview/vienna-tech:1.1.0": *
 
 #show "Typst": fancy-typst
 #show "LaTeX": fancy-latex
@@ -12,7 +12,7 @@
   thesis-type: [Bachelorarbeit],
   authors: (
     (
-      name:"Vorname Nachname",
+      name: "Vorname Nachname",
       email: "email@email.com",
       matrnr: "12345678",
     ),
@@ -44,9 +44,7 @@ das Inhalts- und das Literaturverzeichnis generiert.
 
 #include "sections.typ"
 #pagebreak()
-#show: appendix.with(
-  title: "Anhang"
-)
+#show: appendix.with(title: "Anhang")
 #include "appendix.typ"
 #bibliography("assets/refs.bib")
 

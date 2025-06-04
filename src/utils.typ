@@ -1,5 +1,5 @@
 /// The main font, which is used through out the document.
-/// -> array 
+/// -> array
 #let main-font = ("New Computer Modern",)
 /// The fonts, which are used for the headings (Sans type fonts).
 /// -> array
@@ -9,7 +9,7 @@
 #let raw-font = ("DejaVu Sans Mono",)
 /// The size of the text. All other Textsizes are relative to this lenght.
 /// -> length
-#let normal-size =11pt
+#let normal-size = 11pt
 /// The size of footnotes
 /// -> length
 #let footnote-size = 8 / 11 * normal-size
@@ -27,8 +27,8 @@
   title,
   start: 1,
   style: emph,
-  size:normal-size
-) = context{
+  size: normal-size,
+) = context {
   // Retrieve the current page number
   let pageNumber = counter(page).at(here()).first()
   // no header before the starting page

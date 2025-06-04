@@ -1,4 +1,4 @@
-#import "utils.typ":*
+#import "utils.typ": *
 /// This function constructs the the frontmatter of the thesis.
 /// -> content
 #let maketitle(
@@ -14,10 +14,10 @@
   authors: none,
   /// Displays the date if it is not none.
   /// -> content | string
-  date:datetime.today().display("[day] [month repr:long] [year]"),
+  date: datetime.today().display("[day] [month repr:long] [year]"),
   /// Sets the prefix that is shown before the date.
   /// -> content | string
-  date-prefix:"Datum:",
+  date-prefix: "Datum:",
   /// Defines the fields/keys, that the authors need to have.
   /// -> array
   fields: ("email", "matrnr"),
@@ -44,35 +44,37 @@
     set document(title: title, author: authors.at(0).at("name"))
   }
   let repr-thesis-type = text(thesis-type, weight: "light")
-  let repr-thesis-title = text(title, weight: "bold", hyphenate: title-hypenation)
-
-  authors = authors.map(
-    _parse-author.with(
-      fields: fields,
-      field-prefixes: field-prefixes
-      )
-    )
-  let cols = if authors.len()<= 3 {(1fr,)*authors.len()} else {(1fr,)*3}
-  
-  align(
-    center, {
-      set text(font:title-font, size:large-size)
-      v(50pt, weak: false)
-      repr-thesis-type
-      v(25pt, weak: true)
-      repr-thesis-title
-      v(25pt, weak: true)
-
-      set text(size:font-size)
-      grid(
-        columns: cols,align: center,
-        ..authors,
-      )
-      if date != none {
-        align(center)[#date-prefix #date]
-      }
-    },
+  let repr-thesis-title = text(
+    title,
+    weight: "bold",
+    hyphenate: title-hypenation,
   )
+
+  authors = authors.map(_parse-author.with(
+    fields: fields,
+    field-prefixes: field-prefixes,
+  ))
+  let cols = if authors.len() <= 3 { (1fr,) * authors.len() } else {
+    (1fr,) * 3
+  }
+
+  align(center, {
+    set text(font: title-font, size: large-size)
+    v(50pt, weak: false)
+    repr-thesis-type
+    v(25pt, weak: true)
+    repr-thesis-title
+    v(25pt, weak: true)
+
+    set text(size: font-size)
+    grid(
+      columns: cols, align: center,
+      ..authors,
+    )
+    if date != none {
+      align(center)[#date-prefix #date]
+    }
+  })
 }
 
 /// This function constructs the abstract, which is supposed to come directly after the frontmatter.
@@ -81,18 +83,18 @@
   content,
   /// The font, which is only used for the heading of the abstract paragraph.
   /// -> string
-  font:title-font,
+  font: title-font,
   /// The title which the abstract paragraph should have.
-  /// -> content | string 
-  title:[Kurzfassung]
+  /// -> content | string
+  title: [Kurzfassung],
 ) = {
-    // English abstract
-    v(50pt, weak: true)
-    set text(small-size)
-    show: pad.with(x: 1cm)
-    align(center, text(font: font, strong(title)))
-    v(6pt, weak: true)
-    content
+  // English abstract
+  v(50pt, weak: true)
+  set text(small-size)
+  show: pad.with(x: 1cm)
+  align(center, text(font: font, strong(title)))
+  v(6pt, weak: true)
+  content
 }
 
 /// This function will help you to provide a long caption to a figure,
@@ -134,11 +136,7 @@
   target: figure.where(kind: image),
   /// Additional optional arguments to the outline function.
   ..args,
-) = outline(
-  target: target,
-  title: title,
-  ..args,
-)
+) = outline(target: target, title: title, ..args)
 
 /// This function is a wrapper of the `outline` function and allows for an easy
 /// way to create the list of tables.
@@ -157,8 +155,4 @@
   target: figure.where(kind: table),
   /// Additional optional arguments to the outline function.
   ..args,
-) = outline(
-  target: target,
-  title: title,
-  ..args,
-)
+) = outline(target: target, title: title, ..args)
