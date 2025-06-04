@@ -9,11 +9,11 @@
 #show heading.where(level: 1): it => align(center, it)
 
 = Vienna-Tech - Template Documentation
-#align(center, heading(level: 2, [v.1.0.0]))
+#align(center, heading(level: 2, [v.1.1.0], outlined: false))
 #v(1cm)
 == Example Usage
 ```typ
-#import "@preview/vienna-tech:1.0.0": *
+#import "@preview/vienna-tech:1.1.0": *
 
 // Useing the configuration
 #show: tuw-thesis.with(
@@ -31,6 +31,8 @@
   ),
 )
 ```
+#outline(depth: 2)
+#pagebreak()
 
 #let doc-styles = tidy.parse-module(read("../src/styles.typ"))
 #let doc-constructors = tidy.parse-module(read("../src/constructors.typ"))
