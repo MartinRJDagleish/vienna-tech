@@ -18,7 +18,7 @@
   /// Sets the prefix that is shown before the date.
   /// -> content | string
   date-prefix: "Datum:",
-  /// Defines the fields/keys, that the authors need to have.
+  /// Defines the fields/keys, that the authors need to have, inorder to be diyplayed.
   /// -> array
   fields: ("email", "matrnr"),
   /// Sets the prefixes, that are shown before their actual value, which is taken from the authors dictionary.
@@ -156,3 +156,27 @@
   /// Additional optional arguments to the outline function.
   ..args,
 ) = outline(target: target, title: title, ..args)
+
+/// This function is a dictionary that contains the configuration
+/// for an Author. Any attributes can be added to the dictionary.
+/// The default attributes are `name`, `email`, and `matrnr` and are needed for the default `maketitle` function. But these can be modified or extended, via the fields and field-prefixes arguments.
+/// -> dict
+#let Author(
+  /// The name of the author. (mandatory)
+  /// -> string
+  name,
+  /// The email address of the author.
+  /// -> string
+  email: none,
+  /// The matriculation number of the author.
+  /// -> string
+  matrnr: none,
+  /// Additional attributes
+  /// -> dict
+  attrs: none,
+) = ( 
+  name: name,
+  email: email,
+  matrnr: matrnr,
+  ..attrs,
+)

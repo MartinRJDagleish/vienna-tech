@@ -1,4 +1,5 @@
-#import "@preview/vienna-tech:1.1.0": *
+// #import "@preview/vienna-tech:1.1.0": *
+#import "../src/lib.typ": *
 
 #show "Typst": fancy-typst
 #show "LaTeX": fancy-latex
@@ -11,10 +12,9 @@
   title: [Instruktionen zur Abfassung der Bachelorarbeit],
   thesis-type: [Bachelorarbeit],
   authors: (
-    (
-      name: "Vorname Nachname",
+    Author("Vorname Nachname",
       email: "email@email.com",
-      matrnr: "12345678",
+      matrnr: "123456789",
     ),
   ),
 )
@@ -46,8 +46,8 @@ das Inhalts- und das Literaturverzeichnis generiert.
 #pagebreak()
 #show: appendix.with(title: "Anhang")
 #include "appendix.typ"
-#bibliography("assets/refs.bib")
+#bibliography("assets/refs.bib", title: "Literaturverzeichnis")
 
-#fig-outline()
+#fig-outline(title: "Abbildungsverzeichnis")
 
-#tab-outline()
+#tab-outline(title: "Tabellenverzeichnis")

@@ -49,7 +49,6 @@
   line(length: 100%, stroke: 0.7pt)
 }
 
-#let std-bibliography = bibliography
 
 #let _parse-author(
   author,

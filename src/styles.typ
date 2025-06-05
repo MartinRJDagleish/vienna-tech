@@ -99,8 +99,6 @@
   set math.equation(numbering: eq-numbering) if not eq-chapterwise
   set math.equation(numbering: chapterwise-numbering) if eq-chapterwise
 
-  // Configure citations and bibliography style
-  set std-bibliography(style: "ieee", title: [Literatur])
 
   // Referencing Figures
   show figure.where(kind: table): set figure(

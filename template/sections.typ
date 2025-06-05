@@ -19,7 +19,10 @@ Typst generiert dieses Einrücken automatisch. #lorem(25)
 
 Für diese Arbeit wird das Template `vienna-tech` verwendet, die auf den Stil der
 LaTeX Klasse `BachelorBUI.cls` aufbaut, welche auf der TU Website zu finden ist
-#link("https://www.tuwien.at/cee/edvlabor/lehre/vorlagen").
+#{
+  show link: set text(fill:blue)
+  link("https://www.tuwien.at/cee/edvlabor/lehre/vorlagen")
+}.
 
 Der Haupttext ist in 11-Punkt-Schrift und einzeiligem Abstand geschrieben. Die
 anderen Schriftgrade sind in der Vorlage definiert. Die Formatierung Kursiv kann
@@ -38,20 +41,20 @@ wird jedoch abgeraten. Es sollten in keinem Fall mehr als drei
     table.hline(),
     [Titel (zentriert)],
     [Instruktionen],
-    "\\title{}",
-    [],
+    `\title{}`,
+    `#maketitle()`,
     [Überschrift 1],
     [1 Einleitung],
-    "\section{}",
-    "= ",
+    `\section{}`,
+    `= `,
     [Überschrift 2],
     [2.1 Textbereich],
-    "\subsection{}",
-    "== ",
+    `\subsection{}`,
+    `== `,
     [Überschrift 3],
     [2.1.1 Unterlagen],
-    "\subsubsection{}",
-    "===",
+    `\subsubsection{}`,
+    `===`,
     table.hline(start: 0),
   ),
   caption: shortcap([Beispiel Tabelle], [Die Tabellenbeschriftung ist
