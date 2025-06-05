@@ -1,3 +1,8 @@
+# [v1.1.0](https://github.com/npikall/vienna-tech/releases/tag/v1.1.0)
+- Added functions for List of Figures and Tables
+- Added a `Author` function for simpler author management
+- Added test suite
+
 # [v1.0.0](https://github.com/npikall/vienna-tech/releases/tag/v1.0.0)
 - Separate Functions for the styling of the document and the placing of content
 - Typst 0.13.0 compatible
