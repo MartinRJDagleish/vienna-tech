@@ -14,11 +14,11 @@ doc:
 
 # run test suite
 test *args:
-	tt run {{ args }}
+	tt run --warnings ignore {{ args }}
 
 # update test cases
 update *args:
-	tt update {{ args }}
+	tt update --warnings ignore {{ args }}
 
 # package the library into the specified destination folder
 package target:
