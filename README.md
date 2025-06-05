@@ -24,10 +24,9 @@ These instructions will help you set up the template on the typst web app.
   title: [Instruktionen zur Abfassung der Bachelorarbeit],
   thesis-type: [Bachelorarbeit],
   authors: (
-    (
-      name:"Vorname Nachname",
+    Author("Vorname Nachname",
       email: "email@email.com",
-      matrnr: "12345678",
+      matrnr: "123456789",
     ),
   ),
 )
