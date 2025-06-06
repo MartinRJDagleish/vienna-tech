@@ -1,5 +1,4 @@
-// #import "@preview/vienna-tech:1.1.0": *
-#import "../src/lib.typ": *
+#import "@preview/vienna-tech:1.1.0": *
 
 #show "Typst": fancy-typst
 #show "LaTeX": fancy-latex
@@ -12,7 +11,7 @@
   title: [Instruktionen zur Abfassung der Bachelorarbeit],
   thesis-type: [Bachelorarbeit],
   authors: (
-    Author("Vorname Nachname",
+    author("Vorname Nachname",
       email: "email@email.com",
       matrnr: "123456789",
     ),

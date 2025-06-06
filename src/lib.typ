@@ -2,5 +2,5 @@
 #import "utils.typ": *
 #import "styles.typ": appendix, tuw-thesis
 #import "constructors.typ": (
-  abstract, fig-outline, maketitle, shortcap, tab-outline, Author,
+  abstract, fig-outline, maketitle, shortcap, tab-outline, author
 )
